@@ -1,13 +1,13 @@
-module.exports = function reverse (n) {
-    let reverseN = 0;
-    n = Math.abs(n);
-      while(n !== 0) {
-        let ost = n % 10;
-        reverseN = reverseN * 10 + ost;
-      n = (n - ost)/10;
-    }
-    return reverseN;
-}
+// module.exports = function reverse (n) {
+//     let reverseN = 0;
+//     n = Math.abs(n);
+//       while(n !== 0) {
+//         let ost = n % 10;
+//         reverseN = reverseN * 10 + ost;
+//       n = (n - ost)/10;
+//     }
+//     return reverseN;
+// }
 
 // second solution (longer 16ms vs 10ms)
 // module.exports = function reverse (n) {
@@ -17,3 +17,8 @@ module.exports = function reverse (n) {
 //     reverseN = parseInt(nInStr, 10);
 //     return reverseN; 
 // }
+
+// third solution (9ms)
+module.exports = function reverse (n) {
+    return +((Math.abs(n)).toString().split('').reverse().join(''));
+};
